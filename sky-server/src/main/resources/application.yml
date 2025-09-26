@@ -12,6 +12,10 @@ spring:
       url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
+  redis:
+    host: ${sky.redis.host}
+    port: ${sky.redis.port}
+    password: ${sky.redis.password}
 
 mybatis:
   #mapper配置文件
@@ -37,3 +41,9 @@ sky:
     admin-ttl: 72000000000
     # 设置前端传递过来的令牌名称
     admin-token-name: token
+file:
+  local:
+    # 本地文件存储根路径（Windows路径注意使用正斜杠或双反斜杠）
+    base-path: D:/0-Make Program/dilivery/picture/
+    # 前端访问基础URL（需与WebMvc配置的资源路径对应）
+    base-url: http://localhost:8080/pictures/
